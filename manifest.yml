@@ -1,8 +1,16 @@
+---
+declared-services:
+  Conversation-apesoft:
+    label: conversation
+    plan: free
 applications:
-- path: .
+- name: bootcampapesoft
+  command: npm start
+  path: .
   memory: 256M
   instances: 1
-  domain: mybluemix.net
-  name: bootcampapesoft
-  host: bootcampapesoft
-  disk_quota: 1024M
+  services:
+  - Conversation-apesoft
+  env:
+    NPM_CONFIG_PRODUCTION: false
+    WORKSPACE_ID: 06d4f6f4-34fb-4803-a0ff-f09b00e5b941
