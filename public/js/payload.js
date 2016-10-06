@@ -6,7 +6,6 @@
 var PayloadPanel = (function() {
   var settings = {
     selectors: {
-      payloadColumn: '#payload-column',
       payloadInitial: '#payload-initial-message',
       payloadRequest: '#payload-request',
       payloadResponse: '#payload-response'
@@ -99,7 +98,7 @@ var PayloadPanel = (function() {
     var payloadPrettyString = jsonPrettyPrint(isRequest
             ? Api.getRequestPayload() : Api.getResponsePayload());
 
-    var payloadJson = {
+     var payloadJson = {
       'tagName': 'div',
       'children': [{
         // <div class='header-text'>
@@ -123,6 +122,7 @@ var PayloadPanel = (function() {
         }]
       }]
     };
+
 
     return Common.buildDomElement(payloadJson);
   }
